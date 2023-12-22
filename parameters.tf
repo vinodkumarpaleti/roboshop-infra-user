@@ -1,3 +1,8 @@
+resource "aws_ssm_parameter" "vpc_id" {
+  name  = "/roboshop/dev/vpc_id"
+  type  = "String"
+  value = local.vpc_id
+}
 
 resource "aws_ssm_parameter" "public_subnet_ids" {
   name  = "/roboshop/dev/public_subnet_ids"
@@ -24,8 +29,3 @@ resource "aws_ssm_parameter" "allow_all_security_group_id" {
   value = local.allow_all_security_group_id
 }
 
-resource "aws_ssm_parameter" "vpc_id" {
-  name  = "/roboshop/dev/vpc_id"
-  type  = "String"
-  value = local.vpc_id
-}
